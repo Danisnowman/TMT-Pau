@@ -172,7 +172,7 @@ class Results extends Component {
               data={this.state.data}
               headers={this.state.headers[this.props.results.type]}
               filename={`${
-                this.props.results.type
+                this.props.userId
               }_${date.getFullYear()}-${date.getMonth()}-${date.getDate()}_${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}.csv`}
               className="btn btn-primary btn-lg"
               target="_blank"

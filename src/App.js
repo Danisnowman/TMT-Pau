@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 
 import Menu from "./pages/Menu";
+import Hello from "./pages/Hello";
 import Results from "./pages/Results";
 
 import TrailTest from "./tests/TrailTest";
@@ -13,10 +14,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedPage: "menu",
+      selectedPage: "hello",
       isLoading: false,
       countdown: null,
       results: null,
+      userId: null,
     };
   }
 
@@ -49,12 +51,16 @@ class App extends Component {
     this.setState(results);
   };
 
+  setUserId = (userId) => {
+    this.setState({ userId: userId });
+  };
+
   componentDidMount() {
     //this.countdown();
   }
 
   render() {
-    const { isLoading, countdown, selectedPage, results } = this.state;
+    const { isLoading, countdown, selectedPage, results, userId } = this.state;
 
     if (isLoading) {
       return (
@@ -74,6 +80,7 @@ class App extends Component {
 
         {results ? (
           <Button
+            userId={this.userId}
             size="lg"
             color="primary"
             className="mb-3"
@@ -82,14 +89,17 @@ class App extends Component {
             View Results
           </Button>
         ) : null}
+        {selectedPage === "hello" ? (
+          <Hello goToPage={this.goToPage} setUserId={this.setUserId} />
+        ) : null
+        }
 
         {selectedPage === "menu" ? (
           <Menu selectTest={this.selectTest} />
         ) : (
           <Card
-            className={`test-card mx-auto ${
-              selectedPage === "results" ? "border-0" : null
-            }`}
+            className={`test-card mx-auto ${selectedPage === "results" ? "border-0" : null
+              }`}
           >
             <CardBody>
               {selectedPage === "trailA" ? (
@@ -99,7 +109,7 @@ class App extends Component {
                 <TrailTest part="B" handleResults={this.handleResults} />
               ) : null}
               {selectedPage === "results" ? (
-                <Results results={results} goBack={this.goBack} />
+                <Results results={results} goBack={this.goBack} userId={userId} />
               ) : null}
             </CardBody>
           </Card>
