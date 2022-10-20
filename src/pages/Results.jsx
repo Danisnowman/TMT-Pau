@@ -173,7 +173,7 @@ class Results extends Component {
               headers={this.state.headers[this.props.results.type]}
               filename={`${
                 this.props.results.type
-              }_${date.getDate()}-${date.getMonth()}-${date.getFullYear()}_${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}.csv`}
+              }_${date.getFullYear()}-${date.getMonth()}-${date.getDate()}_${date.getHours()}-${date.getMinutes()}-${date.getSeconds()}.csv`}
               className="btn btn-primary btn-lg"
               target="_blank"
             >

@@ -93,7 +93,7 @@ class App extends Component {
           >
             <CardBody>
               {selectedPage === "trailA" ? (
-                <TrailTest part="A" handleResults={this.handleResults} />
+                <TrailTest part="A12" handleResults={this.handleResults} />
               ) : null}
               {selectedPage === "trailB" ? (
                 <TrailTest part="B" handleResults={this.handleResults} />
