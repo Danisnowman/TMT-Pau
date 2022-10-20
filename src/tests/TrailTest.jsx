@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import PropTypes from "prop-types";
-import Trails from "@lucash-0/react-neuropsych-trails";
+import Trails from "@danisnowman/react-neuropsych-trails";
 
 class TrailTest extends Component {
   static propTypes = {

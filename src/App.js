@@ -4,9 +4,7 @@ import { Component } from "react";
 import Menu from "./pages/Menu";
 import Results from "./pages/Results";
 
-import StroopTest from "./tests/StroopTest";
 import TrailTest from "./tests/TrailTest";
-import HybridTest from "./tests/HybridTest";
 
 import "./App.css";
 import { Container, Card, CardBody, Button } from "reactstrap";
@@ -71,7 +69,7 @@ class App extends Component {
     return (
       <Container className="text-center">
         <div className="mb-5">
-          <h1 className="display-3">CSS2 Hybrid Test Experiment</h1>
+          <h1 className="display-3">TMT Pau</h1>
         </div>
 
         {results ? (
@@ -94,14 +92,11 @@ class App extends Component {
             }`}
           >
             <CardBody>
-              {selectedPage === "stroop" ? (
-                <StroopTest handleResults={this.handleResults} />
+              {selectedPage === "trailA" ? (
+                <TrailTest part="A" handleResults={this.handleResults} />
               ) : null}
-              {selectedPage === "trail" ? (
-                <TrailTest part="A12" handleResults={this.handleResults} />
-              ) : null}
-              {selectedPage === "hybrid" ? (
-                <HybridTest handleResults={this.handleResults} />
+              {selectedPage === "trailB" ? (
+                <TrailTest part="B" handleResults={this.handleResults} />
               ) : null}
               {selectedPage === "results" ? (
                 <Results results={results} goBack={this.goBack} />
@@ -110,7 +105,7 @@ class App extends Component {
           </Card>
         )}
         {selectedPage === "menu" ? (
-          <p className="text-monospace text-center mt-3 text-muted">v1.0.2</p>
+          <p className="text-monospace text-center mt-3 text-muted">v0.0.1</p>
         ) : null}
       </Container>
     );

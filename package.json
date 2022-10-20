@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://lucashahn.dev/CSS2-Hybrid-Test",
   "dependencies": {
-    "@lucash-0/react-neuropsych-trails": "^0.1.26",
+    "@danisnowman/react-neuropsych-trails": "^0.1.27",
     "@lucash-0/react-stroop-trails-hybrid": "^0.1.11",
     "@orcatech/react-neuropsych-stroop": "^1.2.9",
     "@testing-library/jest-dom": "^4.2.4",
