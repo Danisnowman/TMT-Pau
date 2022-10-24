@@ -2,7 +2,7 @@
   "name": "tmt-pau",
   "version": "0.1.1",
   "private": true,
-  "homepage": "https://danisnowman.github.io/TMT-Pau",
+  "homepage": ".",
   "dependencies": {
     "@danisnowman/react-neuropsych-trails": "^0.2.1",
     "@lucash-0/react-stroop-trails-hybrid": "^0.1.11",
