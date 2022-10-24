@@ -6,7 +6,7 @@
   "dependencies": {
     "@danisnowman/react-neuropsych-trails": "^0.2.1",
     "@lucash-0/react-stroop-trails-hybrid": "^0.1.11",
-    "@orcatech/react-neuropsych-stroop": "^1.1.2",
+    "@orcatech/react-neuropsych-stroop": "^1.2.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -15,7 +15,7 @@
     "react": "^16.14.0",
     "react-csv": "^2.2.2",
     "react-dom": "^16.14.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^0.9.5",
     "reactstrap": "^8.10.1"
   },
   "scripts": {
