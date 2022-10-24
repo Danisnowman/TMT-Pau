@@ -5,8 +5,6 @@
   "homepage": ".",
   "dependencies": {
     "@danisnowman/react-neuropsych-trails": "^0.2.1",
-    "@lucash-0/react-stroop-trails-hybrid": "^0.1.11",
-    "@orcatech/react-neuropsych-stroop": "^1.2.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",

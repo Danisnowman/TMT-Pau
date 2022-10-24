@@ -19,6 +19,8 @@ class Results extends Component {
           { label: "Outcome", key: "outcome" },
           { label: "Time elapsed", key: "elapsed" },
           { label: "Reaction time", key: "reaction" },
+          { label: "Carnet", key: "userId" },
+          { label: "Posturno", key: "posturno" },
         ],
       },
       data: null,
@@ -47,6 +49,8 @@ class Results extends Component {
         outcome: event.type,
         elapsed: (event.stamp - start) / 1000,
         reaction: (event.stamp - lastTs) / 1000,
+        userId: this.props.userId,
+        posturno: 1, // update with switch value
       };
       lastTs = event.stamp;
 
