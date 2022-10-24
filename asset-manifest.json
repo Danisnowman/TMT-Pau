@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/TMT-Pau/static/css/main.1693a569.chunk.css",
+    "main.js": "/TMT-Pau/static/js/main.68d38116.chunk.js",
+    "main.js.map": "/TMT-Pau/static/js/main.68d38116.chunk.js.map",
+    "runtime-main.js": "/TMT-Pau/static/js/runtime-main.32e4279b.js",
+    "runtime-main.js.map": "/TMT-Pau/static/js/runtime-main.32e4279b.js.map",
+    "static/css/2.560b9325.chunk.css": "/TMT-Pau/static/css/2.560b9325.chunk.css",
+    "static/js/2.09c25462.chunk.js": "/TMT-Pau/static/js/2.09c25462.chunk.js",
+    "static/js/2.09c25462.chunk.js.map": "/TMT-Pau/static/js/2.09c25462.chunk.js.map",
+    "index.html": "/TMT-Pau/index.html",
+    "precache-manifest.d79e4d04975864fad06802d22a36da07.js": "/TMT-Pau/precache-manifest.d79e4d04975864fad06802d22a36da07.js",
+    "service-worker.js": "/TMT-Pau/service-worker.js",
+    "static/css/2.560b9325.chunk.css.map": "/TMT-Pau/static/css/2.560b9325.chunk.css.map",
+    "static/css/main.1693a569.chunk.css.map": "/TMT-Pau/static/css/main.1693a569.chunk.css.map",
+    "static/js/2.09c25462.chunk.js.LICENSE.txt": "/TMT-Pau/static/js/2.09c25462.chunk.js.LICENSE.txt",
+    "static/js/main.68d38116.chunk.js.LICENSE.txt": "/TMT-Pau/static/js/main.68d38116.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.32e4279b.js",
+    "static/css/2.560b9325.chunk.css",
+    "static/js/2.09c25462.chunk.js",
+    "static/css/main.1693a569.chunk.css",
+    "static/js/main.68d38116.chunk.js"
+  ]
+}
