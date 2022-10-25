@@ -8,17 +8,21 @@ import Results from "./pages/Results";
 import TrailTest from "./tests/TrailTest";
 
 import "./App.css";
-import { Container, Card, CardBody, Button } from "reactstrap";
+import { Container, Card, CardBody, Button, Form, FormGroup, Label, Input, Col } from "reactstrap";
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       selectedPage: "hello",
       isLoading: false,
       countdown: null,
       results: null,
       userId: null,
+      value: "",
+      posturno: null,
     };
   }
 
@@ -51,6 +55,16 @@ class App extends Component {
     this.setState(results);
   };
 
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+  handleSubmit(event) {
+    this.setUserId(this.state.value);
+    console.info("UserID was submitted: " + this.state.value);
+    console.info("Posturno was submitted: " + this.state.posturno.checked);
+    this.goToPage("menu");
+  }
+
   setUserId = (userId) => {
     this.setState({ userId: userId });
   };
@@ -60,7 +74,7 @@ class App extends Component {
   }
 
   render() {
-    const { isLoading, countdown, selectedPage, results, userId } = this.state;
+    const { isLoading, countdown, selectedPage, results, userId, posturno } = this.state;
 
     if (isLoading) {
       return (
@@ -80,7 +94,7 @@ class App extends Component {
 
         {results ? (
           <Button
-            userId={this.userId}
+            userId={userId}
             size="lg"
             color="primary"
             className="mb-3"
@@ -89,31 +103,68 @@ class App extends Component {
             View Results
           </Button>
         ) : null}
-        {selectedPage === "hello" ? (
-          <Hello goToPage={this.goToPage} setUserId={this.setUserId} />
-        ) : null
-        }
+        {selectedPage === "hello" ?
+          (
+            <Container className="text-left">
+              <CardBody>
+                <Form onSubmit={this.handleSubmit}>
+                  <FormGroup row>
+                    <Label for="studentId" sm={2}>Carnet Estudiantil: </Label>
+                    <Col sm={10}>
+                      <Input
+                        value={this.state.value}
+                        onChange={this.handleChange}
+                        type="number"
+                        name="carnet"
+                        id="studentId"
+                        placeholder="20170089" />
+                    </Col>
+                  </FormGroup> <FormGroup row>
+                    <Label for="posturno" sm={2}>¿Estás posturno?</Label>
+                    <Col sm={{ size: 10 }}>
+                      <FormGroup check>
+                        <Label check>
+                          <Input
+                            onChange={this.handleChange}
+                            value={this.state.posturno}
+                            type="checkbox"
+                            id="posturno" />{' '}
+                          Sí estoy posturno.
+                        </Label>
+                      </FormGroup>
+                    </Col>
+                  </FormGroup>
+                  <FormGroup check row>
+                    <Col sm={{ size: 10, offset: 2 }}>
+                      <Button>Enviar</Button>
+                    </Col>
+                  </FormGroup>
+                </Form>
+              </CardBody>
+            </Container>
 
-        {selectedPage === "menu" ? (
-          <Menu selectTest={this.selectTest} />
-        ) : (
-          <Card
-            className={`test-card mx-auto ${selectedPage === "results" ? "border-0" : null
-              }`}
-          >
-            <CardBody>
-              {selectedPage === "trailA" ? (
-                <TrailTest part="A12" handleResults={this.handleResults} />
-              ) : null}
-              {selectedPage === "trailB" ? (
-                <TrailTest part="B" handleResults={this.handleResults} />
-              ) : null}
-              {selectedPage === "results" ? (
-                <Results results={results} goBack={this.goBack} userId={userId} />
-              ) : null}
-            </CardBody>
-          </Card>
-        )}
+          )
+          // <Hello goToPage={this.goToPage} setUserId={this.setUserId} />
+          : selectedPage === "menu" ? (
+            <Menu selectTest={this.selectTest} />
+          ) : (
+            <Card
+              className={`test-card mx-auto ${selectedPage === "results" ? "border-0" : null
+                }`}
+            >
+              <CardBody>
+                {selectedPage === "trailA" ? (
+                  <TrailTest part="A12" handleResults={this.handleResults} />
+                ) : null}
+                {selectedPage === "trailB" ? (
+                  <TrailTest part="B" handleResults={this.handleResults} />
+                ) : null}
+                {selectedPage === "results" ? (
+                  <Results results={results} goBack={this.goBack} userId={userId} posturno={posturno} />
+                ) : null}
+              </CardBody>
+            </Card>
+          )}
         {selectedPage === "menu" ? (
           <p className="text-monospace text-center mt-3 text-muted">v0.0.1</p>
         ) : null}

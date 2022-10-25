@@ -50,7 +50,7 @@ class Results extends Component {
         elapsed: (event.stamp - start) / 1000,
         reaction: (event.stamp - lastTs) / 1000,
         userId: this.props.userId,
-        posturno: 1, // update with switch value
+        posturno: this.props.posturno, 
       };
       lastTs = event.stamp;
 
