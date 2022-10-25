@@ -9,15 +9,17 @@ class Menu extends Component {
   }
   render() {
     return (
-      <Row className='d-flex justify-content-center'>
+      <Row className="d-flex justify-content-center">
         <Col sm="4">
-          <Card body className="h-100" >
+          <Card body className="h-100">
             <CardTitle className="h4">Trail Test A</CardTitle>
             <CardText>
-              The Trail Making Test is a neuropsychological test of visual
-              attention and task switching. It consists of two parts in which
-              the subject is instructed to connect a set of numbered dots as
-              quickly as possible while still maintaining accuracy.
+              La parte A del TMT consiste en 25 círculos en una hoja de papel
+              con los números del 1 al 25 escritos al azar en cada uno. En la
+              parte A, la persona tiene que dibujar una línea de un círculo al
+              siguiente en orden numérico ascendente, del 1 al 25, lo más
+              rápidamente posible. Las líneas entre los círculos se denominan
+              "camino".
             </CardText>
             <Row className="mt-auto">
               <Col>
@@ -31,20 +33,21 @@ class Menu extends Component {
               </Col>
               <Col>
                 <Button color="secondary" block>
-                  Instructions
+                  Instrucciones
                 </Button>
               </Col>
             </Row>
           </Card>
         </Col>
         <Col sm="4">
-          <Card body className="h-100" >
+          <Card body className="h-100">
             <CardTitle className="h4">Trail Test B</CardTitle>
-            <CardText>
-              The Trail Making Test is a neuropsychological test of visual
-              attention and task switching. It consists of two parts in which
-              the subject is instructed to connect a set of numbered dots as
-              quickly as possible while still maintaining accuracy.
+            <CardText className="text-justified">
+              La parte B del TMT consiste en 24 círculos en una hoja de papel,
+              pero, en lugar de que todos los círculos contengan números, la
+              mitad contiene los números del 1 al 12 y la otra mitad las letras
+              de la A a la L. En la parte B, la persona debe conectar los
+              círculos en orden ascendente, alternando entre números y letras.
             </CardText>
             <Row className="mt-auto">
               <Col>
@@ -58,7 +61,7 @@ class Menu extends Component {
               </Col>
               <Col>
                 <Button color="secondary" block>
-                  Instructions
+                  Instrucciones
                 </Button>
               </Col>
             </Row>

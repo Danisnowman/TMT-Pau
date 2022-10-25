@@ -22,7 +22,7 @@ class App extends Component {
       results: null,
       userId: null,
       value: "",
-      posturno: null,
+      posturno: false,
     };
   }
 
@@ -61,7 +61,7 @@ class App extends Component {
   handleSubmit(event) {
     this.setUserId(this.state.value);
     console.info("UserID was submitted: " + this.state.value);
-    console.info("Posturno was submitted: " + this.state.posturno.checked);
+    console.info("Posturno was submitted: " + this.state.posturno);
     this.goToPage("menu");
   }
 
@@ -100,12 +100,15 @@ class App extends Component {
             className="mb-3"
             onClick={() => this.goToPage("results")}
           >
-            View Results
+            Ver Resultados
           </Button>
         ) : null}
         {selectedPage === "hello" ?
           (
             <Container className="text-left">
+              <p className=" mt-3 text-muted">
+                El Trail Making Test es una prueba neuropsicológica de atención visual atención visual y cambio de tareas. Consta de dos partes en las que el sujeto tiene que conectar un conjunto de puntos numerados lo más rápido posible sin perder la precisión.
+              </p>
               <CardBody>
                 <Form onSubmit={this.handleSubmit}>
                   <FormGroup row>
@@ -125,8 +128,8 @@ class App extends Component {
                       <FormGroup check>
                         <Label check>
                           <Input
-                            onChange={this.handleChange}
-                            value={this.state.posturno}
+                            // value={this.state.posturno}
+                            onChange={(e) => this.setState({ posturno: e.target.checked })}
                             type="checkbox"
                             id="posturno" />{' '}
                           Sí estoy posturno.

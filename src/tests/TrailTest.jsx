@@ -64,7 +64,7 @@ class TrailTest extends Component {
         feedback={true}
         errorText="X"
         errorDuration={500}
-        completedText={"Completed! Please press the view results button"}
+        completedText={"¡Completado! Pulsa el botón de ver resultados"}
         onSuccess={this.handleSuccess}
         onError={this.handleError}
         onMiss={this.handleMiss}

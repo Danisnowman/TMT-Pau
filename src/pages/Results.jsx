@@ -88,11 +88,11 @@ class Results extends Component {
                       if (index === 0) {
                         return (
                           <th scope="row" key={index}>
-                            {val}
+                            {String(val)}
                           </th>
                         );
                       } else {
-                        return <td key={index}>{val}</td>;
+                        return <td key={index}>{String(val)}</td>;
                       }
                     })}
                   </tr>
@@ -101,6 +101,9 @@ class Results extends Component {
             </tbody>
           ) : null}
         </Table>
+        <p className="text-monospace mt-3 text-muted">
+          Por favor recuerda descargar el archivo con el botón de abajo y mandárselo Paulina Reyes.
+        </p>
         <div className="mb-2">
           {this.state.data ? (
             <CSVLink
@@ -112,7 +115,7 @@ class Results extends Component {
               className="btn btn-primary btn-lg"
               target="_blank"
             >
-              Download CSV
+              Descargar CSV
             </CSVLink>
           ) : (
             <Spinner />
@@ -120,7 +123,7 @@ class Results extends Component {
         </div>
 
         <Button onClick={this.props.goBack} color="secondary" className="mb-3">
-          Go Back
+          Regresar
         </Button>
       </div>
     );
