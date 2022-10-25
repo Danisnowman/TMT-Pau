@@ -1,14 +1,13 @@
 import React from "react";
-import { Component } from "react";
 
 import Menu from "./pages/Menu";
-import Hello from "./pages/Hello";
 import Results from "./pages/Results";
 
 import TrailTest from "./tests/TrailTest";
 
 import "./App.css";
 import { Container, Card, CardBody, Button, Form, FormGroup, Label, Input, Col } from "reactstrap";
+import { Component } from "react";
 
 class App extends Component {
   constructor(props) {
